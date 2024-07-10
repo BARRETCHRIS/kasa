@@ -1,3 +1,12 @@
+# INFOS
+## Title : KASA
+## Node v18.20.4
+
+Attention : tvx stopper à l'initialisation de react
+To Do : initialiser sass, le router, et commencer la construction 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
