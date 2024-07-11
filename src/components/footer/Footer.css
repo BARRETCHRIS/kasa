@@ -1,0 +1,18 @@
+.footer {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-footer svg {
+    width: 122px;
+    height: 39.44px;
+}
+.logo-footer path{
+    fill: white;
+}
+.copyRight {
+    color: white;
+}
