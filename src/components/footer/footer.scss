@@ -1,0 +1,32 @@
+.footer {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 210px;
+
+    & .logo{
+        & svg {
+            width: 122px;
+            height: 39.44px;
+        }
+            & path{
+            fill: white;
+        }
+    } 
+
+    & .copyRight {
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+
+        & .fa-copyright{
+            font-size: 20px;   
+        }
+    }    
+}
+
+
+

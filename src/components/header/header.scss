@@ -1,0 +1,15 @@
+.header {
+    max-width: 1240px;
+    width: 86%;
+    height: 68px;
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
+    
+
+    & .logo {
+        width: 38.66%;
+        max-width: 210.32px;
+        min-width: 145px;
+    }
+}

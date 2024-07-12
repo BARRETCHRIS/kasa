@@ -1,0 +1,26 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav{
+    align-self: center;
+
+    &_bar {
+        text-align: right;
+        font-size: clamp(12px, 2.5vw, 24px);
+        font-weight: 500;
+
+        &_item{
+            display: inline-block;
+            margin-left: 3.5vw;
+            @media screen and (max-width: 700px){
+                text-transform: uppercase;
+                font-weight: 700;
+            }  
+            & active-link{
+               text-decoration: underline solid black; 
+            }     
+        }
+    }
+}
