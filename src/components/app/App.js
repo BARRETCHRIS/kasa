@@ -1,4 +1,3 @@
-
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Home from '../mainContent/HomeContent'
@@ -6,11 +5,18 @@ import Dwelling from '../mainContent/DwellingContent'
 import About from '../mainContent/AboutContent'
 import Error404 from '../mainContent/Error404';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css'
 
 const router = createBrowserRouter([
 	{
-		path: "/Kasa",
-		element: <Home />
+		path: "/",
+		element: <Home />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "kasa", element: <Home /> },
+        { path: "home", element: <Home /> },
+        { path: "accueil", element: <Home /> },
+      ],
 	},
 	{
 		path: "/dwelling/:id",
@@ -28,7 +34,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="Wrapper">
+    <div className="wrapper">
       <Header/>
       <>
 			<RouterProvider router={router}/>

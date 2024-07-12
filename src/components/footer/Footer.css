@@ -3,7 +3,9 @@
     background-color: black;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    height: 210px;
 }
 
 .logo-footer svg {
@@ -15,4 +17,6 @@
 }
 .copyRight {
     color: white;
+    font-size: 24px;
+    font-weight: 500;
 }
