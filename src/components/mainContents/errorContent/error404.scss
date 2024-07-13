@@ -1,0 +1,26 @@
+@import '../../../sass/variables';
+
+.error {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding: 20px;
+    text-align: center;
+    color: $primary-color;
+
+    &_nbr{
+        font-size: clamp(96px, 20vw, 288px);
+        font-weight: 700;
+    }
+
+    &_msg{
+        font-size: clamp(18px, 2.5vw, 36px);
+    }
+
+    &_linkBack{
+        color: $dark-color;
+        text-decoration: underline solid black;
+    }
+}

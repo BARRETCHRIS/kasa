@@ -8,14 +8,14 @@ function Nav() {
     console.log(currentRoute);
     return (
         <nav className="nav">
-        <ul className='nav_bar'>
-            <li className={`nav_bar_item ${location.pathname === '/' ? 'active' : ''}`}>
-                <Link to="/">Accueil</Link>
-            </li>
-            <li className={`nav_bar_item ${location.pathname === '/about' ? 'active' : ''}`}>
-                <Link to="/about">&Agrave; Propos</Link>
-            </li>
-        </ul>
+            <menu className='nav_bar'>
+                <li className={`nav_bar_item ${location.pathname === '/' ? 'active' : ''}`}>
+                    <Link to="/">Accueil</Link>
+                </li>
+                <li className={`nav_bar_item ${location.pathname === '/about' ? 'active' : ''}`}>
+                    <Link to="/about">&Agrave; Propos</Link>
+                </li>
+            </menu>
         </nav>
     );
 }

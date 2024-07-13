@@ -2,10 +2,15 @@
     max-width: 1240px;
     width: 86%;
     height: 68px;
-    margin: 40px 40px 20px 40px ;
+    margin: 3vw 1.3vw 0 1.3vw;
     display: flex;
     justify-content: space-between;
-    
+
+    & .first-title{
+        display: inline-block;
+        width: auto;
+        max-width: 50%;
+    }    
 
     & .logo {
         width: 38.66%;

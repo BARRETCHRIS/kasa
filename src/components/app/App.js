@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from '../header/Header';
+import Header from '../header/Header/Header';
 import Footer from '../footer/Footer';
-import Home from '../mainContent/HomeContent';
-import Dwelling from '../mainContent/DwellingContent';
-import About from '../mainContent/AboutContent';
-import Error404 from '../mainContent/Error404';
+import Home from '../mainContents/HomeContent';
+import Dwelling from '../mainContents/DwellingContent';
+import About from '../mainContents/AboutContent';
+import Error404 from '../mainContents/errorContent/Error404';
 import './app.scss';
 
 function App() {

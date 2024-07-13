@@ -1,3 +1,5 @@
+// @import '../../../sass/variables';
+
 a{
     text-decoration: none;
     color: inherit;
@@ -8,7 +10,7 @@ a{
 
     &_bar {
         text-align: right;
-        font-size: clamp(12px, 2.5vw, 24px);
+        font-size: clamp(12px, 1.7vw, 24px);
         font-weight: 500;
 
         &_item{

@@ -1,6 +1,6 @@
 function DwellingContent() {
     return (
-        <div className="dwelling-content"> Page habitation </div>
+        <main className="dwelling-content"> Page habitation </main>
     )    
 }
 

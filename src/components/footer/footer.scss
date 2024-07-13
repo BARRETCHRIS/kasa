@@ -1,29 +1,30 @@
+@import '../../sass/variables';
+
 .footer {
     width: 100vw;
     height: 210px;
-    background-color: black;
+    background-color: $dark-color;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 20px;
 
     & .logo{
         & svg {
-            width: 122px;
-            height: 39.44px;
+            max-width: 122px;
         }
             & path{
-            fill: white;
+            fill: $light-color;
         }
     } 
 
     & .copyRight {
-        color: white;
-        font-size: 24px;
-        font-weight: 500;
+        color: $light-color;
+        font-size: clamp(12px, 1.7vw, 24px);
 
         & .fa-copyright{
-            font-size: 20px;   
+            font-size: clamp(10px, 1.4vw, 20px);   
         }
     }    
 }
