@@ -14,9 +14,10 @@ function App() {
         <Header />
         <Routes>
 			{/* Redirections */}
-			<Route path="/kasa" element={<Navigate to="/" />} />
+			<Route path="/Kasa" element={<Navigate to="/" />} />
 			<Route path="/home" element={<Navigate to="/" />} />
 			<Route path="/accueil" element={<Navigate to="/" />} />
+			<Route path="/apropos" element={<Navigate to="/" />} />
 
 			{/* Routes normales */}
 			<Route path="/" element={<Home />}/>
