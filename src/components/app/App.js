@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from '../header/Header/Header';
 import Footer from '../footer/Footer';
-import Home from '../mainContents/HomeContent';
-import Dwelling from '../mainContents/DwellingContent';
-import About from '../mainContents/AboutContent';
+import Home from '../mainContents/homeContent/HomeContent';
+import Rental from '../mainContents/rentalContent/RentalContent';
+import About from '../mainContents/aboutContent/AboutContent';
 import Error404 from '../mainContents/errorContent/Error404';
 import './app.scss';
 
@@ -21,7 +21,7 @@ function App() {
 
 			{/* Routes normales */}
 			<Route path="/" element={<Home />}/>
-			<Route path="/dwelling/:id" element={<Dwelling />} />
+			<Route path="/rental/:id" element={<Rental />} />
 			<Route path="/about" element={<About />} />
 			<Route path="*" element={<Error404 />} />
         </Routes>

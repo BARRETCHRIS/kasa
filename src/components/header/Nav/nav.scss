@@ -21,7 +21,8 @@ a{
                 font-weight: 700;
             }  
             &.active{
-               text-decoration: underline solid black; 
+                padding-bottom: 3px;
+                border-bottom: 2px solid black; 
             }     
         }
     }

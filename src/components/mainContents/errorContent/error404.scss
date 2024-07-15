@@ -1,12 +1,7 @@
 @import '../../../sass/variables';
 
 .error {
-    display: flex;
-    flex-grow: 2;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 50px;
-    padding: 20px;
+    @include baseMain;
     text-align: center;
     color: $primary-color;
 

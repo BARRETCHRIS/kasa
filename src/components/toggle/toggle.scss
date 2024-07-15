@@ -1,0 +1,73 @@
+@import '../../sass/variables';
+
+.dropdown {
+	width: 100%;
+	max-width: 1023px;
+
+	&__visible {
+		background: $primary-color;
+		color: $light-color;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 30px;
+		padding: 7px 15px;
+		border-radius: 5px;
+		
+
+		@media screen and (min-width: 720px) {
+			height: 47px;
+		}
+
+		h2 {
+			@include font(13px, 500);
+
+			@media screen and (min-width: 720px) {
+				@include font(24px, 500);
+			}
+		}
+	}
+
+	&__toggle {
+		opacity: 0;
+		color: $dark-color;
+		padding: 22px 15px;
+		background: $light-grey;
+		border-radius: 5px;
+		transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
+	}
+}
+
+.animated {
+	opacity: 1;
+	transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out;
+}
+
+.chevron {
+	width: 9px;
+	transform: rotate(0deg);
+	transition: 0.4s 0.4s ease-in-out;
+
+	@media screen and (min-width: 720px) {
+		width: 15px;
+	}
+}
+
+.rotated {
+	transform: rotate(180deg);
+	transition: 0.4s ease-in-out;
+}
+
+.dropdown-fiche-container {
+	width: 100%;
+
+	@media screen and (min-width: 720px) {
+		flex-direction: row;
+		gap: 6%;
+	}
+}
+
+.equipList {
+	list-style-type: none;
+}
