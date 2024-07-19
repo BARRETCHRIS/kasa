@@ -1,43 +1,41 @@
-import { useState, useRef, useEffect } from "react"; 
-//import des hooks de base react
-import Chevron from "../../assets/vectorBas.svg";
-import "./toggle.scss";
+import { useState, useRef, useEffect } from 'react';
+import './toggle.scss';
 
-function Toggle(props) {
-	const [toggle, setToggle] = useState(false); // definis le state du toggle (et false par défaut)
-	const [heightEl, setHeightEl] = useState(); // definis le state de la hauteur du dropdown
+function Toggle({ title, content, halfWidth }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const contentRef = useRef(null);
 
-	const toggleState = () => {
-		//définis la fonction toggleState qui modifie la valeur toggle au clic
-		setToggle(!toggle);
-	};
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
 
-	const refHeight = useRef(); //récupère et conserve la valeur de hauteur du dropdown déplié
+    useEffect(() => {
+        if (isOpen) {
+            contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
+        } else {
+            contentRef.current.style.maxHeight = '0px';
+        }
+    }, [isOpen]);
 
-	useEffect(() => {
-		setHeightEl(`${refHeight.current.scrollHeight}px`); //useEffect s'éxécute au montage du composant, dans ce cas, il définit la hauteur du dropdown déplié lors de sa première ouverture et la conserve dans refHeight
-	}, []);
-
-	return (
-		// affiche le dropdown replié par défaut et l'ouvre au clic puis le referme au clic en faisant disparaitre le texte et le style
-		<section className={`dropdown ${props.aboutStyle}`}>
-			<div onClick={toggleState} className="dropdown__visible">
-				<h2>{props.aboutTitle}</h2>
-				<img
-					className={toggle ? "chevron rotated" : "chevron"}
-					src={Chevron}
-					alt="chevron"
-				/>
-			</div>
-			<p
-				ref={refHeight}
-				className={toggle ? "dropdown__toggle animated" : "dropdown__toggle"}
-				style={{ height: toggle ? `${heightEl}` : "0px" }}
-			>
-				{props.aboutText}
-			</p>
-		</section>
-	);
+    return (
+        <section className={`dropdown ${isOpen ? 'open' : ''} ${halfWidth ? 'half-width' : ''}`}>
+            <div className="dropdown__visible" onClick={toggleDropdown}>
+                <h2>{title}</h2>
+                <i className={`fa-solid fa-chevron-down ${isOpen ? 'rotate' : ''}`}></i>
+            </div>
+            <div ref={contentRef} className="dropdown__content">
+                {Array.isArray(content) ? (
+                    <ul>
+                        {content.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="dropdown__corps">{content}</p>
+                )}
+            </div>
+        </section>
+    );
 }
 
 export default Toggle;

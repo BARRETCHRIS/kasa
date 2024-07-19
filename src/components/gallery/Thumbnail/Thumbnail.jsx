@@ -4,11 +4,9 @@ import './thumbnail.scss';
 function Thumbnail({ link, cover, title }) {
     return (
         <article className='thumbnail'>
-            <Link to={link}>
-                <div className="image-wrapper">
-                    <img src={cover} alt={title} className="thumbnail-image" />
-                    <h3 className="thumbnail-title">{title}</h3>
-                </div>
+            <Link to={link} alt={title} className="thumbnail_link">
+                <img src={cover} alt={title} className="thumbnail_link_img" />
+                <h3 className="thumbnail_link_title">{title}</h3>
             </Link>    
         </article>
     )

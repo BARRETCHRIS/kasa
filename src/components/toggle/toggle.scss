@@ -1,73 +1,76 @@
 @import '../../sass/variables';
 
 .dropdown {
-	width: 100%;
-	max-width: 1023px;
+    width: 100%;
+	max-width: 1020px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 
-	&__visible {
-		background: $primary-color;
+    &__visible {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        cursor: pointer;
+        height: 50px;
+        background-color: $primary-color;
 		color: $light-color;
-		cursor: pointer;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 30px;
-		padding: 7px 15px;
+		font-size: clamp(13px, 1.5vw, 18px);
+        font-weight: 700;
+		border-radius: inherit;
+
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+
+        p, ul {
+            margin: 0;
+            padding: 15px;
+			background-color: $light-grey;
+			font-size: clamp(12px, 1.5vw, 18px);
+			font-weight: 400;
+        }
+
+        ul {
+            padding-left: 20px;
+			font-size: clamp(12px, 1.5vw, 18px);
+			font-weight: 400;
+
+            li {
+                list-style: none;
+				font-size: clamp(12px, 1.5vw, 18px);
+				font-weight: 400;
+            }
+        }
+    }
+
+    &.open {
 		border-radius: 5px;
-		
 
-		@media screen and (min-width: 720px) {
-			height: 47px;
-		}
-
-		h2 {
-			@include font(13px, 500);
-
-			@media screen and (min-width: 720px) {
-				@include font(24px, 500);
-			}
-		}
-	}
-
-	&__toggle {
-		opacity: 0;
-		color: $dark-color;
-		padding: 22px 15px;
-		background: $light-grey;
-		border-radius: 5px;
-		transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
-	}
+        &__content {
+            max-height: 1000px; 
+            padding: 10px;
+			
+        }
+    }
 }
 
-.animated {
-	opacity: 1;
-	transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out;
-}
-
-.chevron {
-	width: 9px;
-	transform: rotate(0deg);
-	transition: 0.4s 0.4s ease-in-out;
-
-	@media screen and (min-width: 720px) {
-		width: 15px;
-	}
-}
-
-.rotated {
-	transform: rotate(180deg);
-	transition: 0.4s ease-in-out;
-}
-
-.dropdown-fiche-container {
-	width: 100%;
-
-	@media screen and (min-width: 720px) {
-		flex-direction: row;
-		gap: 6%;
-	}
-}
-
-.equipList {
-	list-style-type: none;
+@media (min-width: 720px) {
+    .dropdown {
+        &.half-width {
+            width: 48%;
+        }
+    }
 }

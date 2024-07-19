@@ -1,0 +1,25 @@
+@import '../../sass/variables';
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    &_tag{
+        width: 14vw;
+        max-width: 140px;
+        min-width: 100px; 
+        text-align: center;
+        background-color: $primary-color;
+        color: $light-color;
+        padding: 5px;
+        border-radius: 12.5px;
+        font-size: clamp(10px, 1vw, 14px);
+        font-weight: 700;
+        line-height: normal;
+
+        @media screen and (max-width: 720px) {
+            width: 84px;
+        }
+    }
+}

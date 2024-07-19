@@ -8,7 +8,6 @@ function HomeContent() {
         <main className="home-content">
             <Banner />
             <Gallery />
-            {/* <RentalList /> */}
         </main>
     )    
 }

@@ -1,0 +1,14 @@
+@import '../../sass/variables';
+
+.rating-stars{
+    font-size: clamp(13px, 1.5vw, 24px);
+    display: flex;
+    gap: 5px;
+    
+    &>*{
+        color: $medium-grey;
+    }
+    & .filled {
+        color: $primary-color;
+    }
+}
