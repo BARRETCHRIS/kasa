@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useFetch } from '../../../utils/useFetch';
 import Slider from '../../slider/Slider';
 import Profiler from '../../profiler/Profiler';
+import Error404 from '../errorContent/Error404';
 import './rentalContent.scss'
 
 function RentalContent() {
@@ -21,7 +22,7 @@ function RentalContent() {
     }
 
     if (rentals.error || !thisRental) {
-        return <div>!!! Does not exist !!!</div>;
+        return <Error404 />
     }
 
     return (

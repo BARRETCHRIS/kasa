@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef} from 'react';
 import './toggle.scss';
 
 function Toggle({ title, content, halfWidth }) {
@@ -8,15 +8,7 @@ function Toggle({ title, content, halfWidth }) {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-
-    useEffect(() => {
-        if (isOpen) {
-            contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
-        } else {
-            contentRef.current.style.maxHeight = '0px';
-        }
-    }, [isOpen]);
-
+    
     return (
         <section className={`dropdown ${isOpen ? 'open' : ''} ${halfWidth ? 'half-width' : ''}`}>
             <div className="dropdown__visible" onClick={toggleDropdown}>

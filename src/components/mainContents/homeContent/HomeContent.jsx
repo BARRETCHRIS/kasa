@@ -1,6 +1,5 @@
 import Banner from "../../banner/Banner";
 import Gallery from '../../gallery/Gallery/Gallery';
-// import RentalList from '../../rentalList/RentalList'
 import './homeContent.scss';
 
 function HomeContent() {

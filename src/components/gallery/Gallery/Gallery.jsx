@@ -5,6 +5,11 @@ import './gallery.scss'
 function Gallery() {
     const rentals = useFetch(window.location.origin + '/datas.json');
 
+    if (rentals.isLoading) {
+        
+        return <div>Chargement !!!</div>;
+    }
+
     return (
         <section className='gallery'>
             {rentals.fetchedData && rentals.fetchedData.map((rental) => 
