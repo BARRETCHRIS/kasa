@@ -1,4 +1,4 @@
-import { useState, useRef} from 'react';
+import { useState, useRef } from 'react';
 import './toggle.scss';
 
 function Toggle({ title, content, halfWidth }) {
@@ -8,14 +8,14 @@ function Toggle({ title, content, halfWidth }) {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-    
+
     return (
         <section className={`dropdown ${isOpen ? 'open' : ''} ${halfWidth ? 'half-width' : ''}`}>
             <div className="dropdown__visible" onClick={toggleDropdown}>
                 <h2>{title}</h2>
                 <i className={`fa-solid fa-chevron-down ${isOpen ? 'rotate' : ''}`}></i>
             </div>
-            <div ref={contentRef} className="dropdown__content">
+            <div ref={contentRef} className="dropdown__content" style={{ maxHeight: isOpen && contentRef.current.scrollHeight+'px '}}>
                 {Array.isArray(content) ? (
                     <ul>
                         {content.map((item, index) => (
